@@ -1,0 +1,31 @@
+.AddRoom-Container{
+    height:350px;
+}
+.RemoveRoomsList{
+    overflow-y: scroll;
+}
+
+.RemoveRoom-Container{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.RemoveRoom-Container .RoomPic{
+width:20px;
+height:20px;
+border-radius: 50%;
+}
+
+.RemoveRoom-Container .RemoveRoomName{
+color: white;
+font-size: medium;
+font-weight: 200;
+text-align: center;
+}
+
+
+

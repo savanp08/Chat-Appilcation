@@ -1,0 +1,32 @@
+//when other person adds us we wont know , send username as roomid to socket to join at mounting of component and when a member is added send this roomid to that user
+//Make Room come to top after a message is sent ot received
+//notifications about members leaving , joining , new unseen messages
+//scroll to last seen message and keep screen view at starting of new unseen messages
+//style the members and rooms list in remove components
+//On Right side at rightmost corner add->
+//add 1) members status and list, 
+//    2) DashBoard
+//    3) QueryBoard
+//    4) Room Posts
+ 
+//at left (rooms part) add ->
+//  1)Types of Rooms ex: Personal, unofficial, Official, Chronological RoomsSet, etc
+//  2)hide elements when clicked anywhere but on them to some elements like QuickRoom login and Room&Chat Options etc
+
+//integrae date and time properly
+//double tick feature
+//Add Image,Audio, Video Insertion and play options to chat
+//add profile pic options
+// make description page of chat bar
+
+
+//integrate redux
+
+//make responsive
+//when input pad is selected in mobile it is automatically changing to chatwindow
+//write status code in server and keep best DSA 
+//Make Posts responsive
+//add scroll height cache in session storage and new message notification to user schema
+//add queries
+//good UI
+

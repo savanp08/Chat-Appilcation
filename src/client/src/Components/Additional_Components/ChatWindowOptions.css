@@ -1,0 +1,17 @@
+.RemoveMember-Container{
+    display:flex;
+    flex-flow: column wrap;
+    background-color: black;
+
+}
+.MemberPic{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: wheat;
+}
+.RemoveMemberName{
+    color: white;
+    font-size: medium;
+    font-weight: 200;
+}

@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px 0px;
+}
+.Content-wrapper {
+  width: 100vw;
+  margin: 0px;
+  border: 0px;
+  background-color: rgb(254, 249, 249);
+  height: 100vh;
+  display :flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}

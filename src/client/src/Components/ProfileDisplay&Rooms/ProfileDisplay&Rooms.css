@@ -1,0 +1,80 @@
+.Profile-Wrapper {
+  flex: 1;
+  display: block;
+  height: 79px;
+  border-bottom: 3px solid #26282c;
+  box-shadow: 10px 15px 30px grey inset, 5px 10px 25px grey inset;
+  cursor: pointer;
+}
+
+.Contact {
+  padding-top: 4px;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-content: center;
+  background-color: rgb(23, 23, 23);
+  color:rgb(188, 183, 183);
+}
+.Contact:hover {
+  background-color: rgb(107, 104, 104);
+}
+.Profile-Wrapper:hover {
+  background-color: rgb(107, 104, 104);
+}
+.Contact-ProfilePic-Container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-right: 16px;
+  padding-left: 15px;
+}
+.Contact-ProfilePic {
+  align-self: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.Contact-BasicInfo {
+  display: flex;
+  flex-flow: column wrap;
+  flex: 1;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+.Profile-Name {
+  display: flex;
+  align-self: flex-start;
+}
+
+.Text-Control-Box {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow-x: hidden;
+  width: 200px;
+}
+
+.Last-Message {
+  padding-bottom: 5px;
+  max-width: 14vw;
+}
+
+@media only screen and (max-width:700px){
+  .Last-Message{
+    max-width: 250px;
+  }
+}
+
+@media only screen and (max-width:600px){
+  .Last-Message{
+    max-width: 190px;
+  }
+}
+@media only screen and (max-width:500px){
+  .Last-Message{
+    max-width: 150px;
+  }
+}
