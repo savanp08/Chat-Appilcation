@@ -126,17 +126,17 @@ var count=0;
                 if(UsersCount.get(socketData.get(socket.id))===0){console.log("Single COunt of User ",UsersCount.get(socketData.get(socket.id)),"left so deleting->",UsersCount.has(socketData.get(socket.id)));
                 if(UserData.has(socketData.get(socket.id))){ console.log("Inside room loop->"); console.log(RoomsData,UserData);
                     UserData.get(socketData.get(socket.id)).forEach(roomId=>{
-                       if(RoomsData.get(roomId)){
+                       if(RoomsData.get(roomId)){ 
                         console.log("Sending User", socketData.get(socket.id) , "Left to Room",roomId);
                         io.to(roomId).emit("disconnected",socketData.get(socket.id));
                         const index = RoomsData.get(roomId).indexOf(socketData.get(socket.id));
-                        if(index>-1){
+                        if(index>-1){ 
                            // console.log("debug->",RoomsData.get(roomId),"->",RoomsData.get(roomId).splice(index,1),"for",socketData.get(socket.id),index)
                        RoomsData.get(roomId).splice(index,1)
                         }
                         if(RoomsData.get(roomId) && Array.isArray(RoomsData.get(roomId)) && RoomsData.get(roomId).length===0) RoomsData.delete(roomId);
-                       }
-                    }) 
+                       }  
+                    })  
                     UserData.delete(socketData.get(socket.id));
                     UsersCount.delete(socketData.get(socket.id))
                     socketData.delete(socket.id);

@@ -74,6 +74,7 @@ const [ActiveMembers,setActiveMembers] = useState(new Map());
 const [Rerender,setRerender] = useState(0);
 const [Conn,setConn] = useState(false);
 const params= useParams();
+const [socket,setSocket]= useState(null);
 userid= params.UserId;
 console.log(params);
 UserName=userid;
@@ -256,7 +257,7 @@ deleteUser();
 }
 },[])
 
-const [socket,setSocket] = useState(null);
+
 console.log("socket ->",socket);
 if(socket)
 console.log("socket Id->",socket.id);
@@ -350,46 +351,47 @@ console.log("Socket is",socket);
 var count=0
 useEffect(()=>{
   const port = process.env.fakePort;
-  console.log("window hostname",window.location.hostname);
-  if(socket===null)
+  console.log("window hostname",window.location.hostname,"flag dependency ->",flag);
   setSocket(io());
- ++count;
- 
-  
-  
-    if(socket && !Conn){
-    socket.on("connect",()=>{
-      console.log("Sending rooms to socket, count->",count);
-      console.log(socket.id);
-      var roomsArray=[];
+},[flag]);
+useEffect(()=>{
+if(socket){
+  console.log("inside socket->");
+  socket.on("connect",()=>{
+    console.log("Sending rooms to socket, count->",count);
+    console.log(socket.id);
+    var roomsArray=[];
 [...Rooms].map(([key,value])=> roomsArray.push(key));
 roomsArray.push(UserName);
 console.log(roomsArray);
-  socket.emit("joinRoom",roomsArray); 
-  setConn(true);
+socket.emit("joinRoom",roomsArray); 
+setConn(true);
 });
-
-    }
-
+}
+ 
+ 
     return ()=>{
       if(socket){
       socket.on('disconnect', () => { 
         console.log("disccoented");
-        socket.removeAllListeners();  
-        socket.off("connect"); 
+       
        
      });
-     
+     socket.off("connect"); 
+     socket.off("disconnect");
     }
     
   }
-},[flag]);
 
+},[socket]);
 
 useEffect(()=>{
+  ++count;
   if(socket){
 console.log("socket Id is ",socket.id);
-   
+
+
+
    socket.on('update',data=>{
      if(Object.keys(data).includes("MessageId")){
        setMsg(data);
@@ -440,8 +442,7 @@ console.log("socket Id is ",socket.id);
       }
       setActiveMembers(new Map(ActiveMembers));
     })
-
-  }
+}
 return ()=>{
   if(socket){
   
