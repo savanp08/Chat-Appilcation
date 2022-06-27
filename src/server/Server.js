@@ -127,7 +127,7 @@ var count=0;
                 if(UserData.has(socketData.get(socket.id))){ console.log("Inside room loop->"); console.log(RoomsData,UserData);
                     UserData.get(socketData.get(socket.id)).forEach(roomId=>{
                        if(RoomsData.get(roomId)){ 
-                        console.log("Sending User", socketData.get(socket.id) , "Left to Room",roomId);
+                        console.log("Sending User", socketData.get(socket.id) , "Left to Room",roomId,RoomsData.get(roomId));
                         io.to(roomId).emit("disconnected",socketData.get(socket.id));
                         const index = RoomsData.get(roomId).indexOf(socketData.get(socket.id));
                         if(index>-1){ 

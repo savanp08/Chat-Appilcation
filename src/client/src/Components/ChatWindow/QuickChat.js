@@ -728,7 +728,9 @@ objDiv.scrollIntoView(false);
     return (
      <div className="ContentWrapper">
        
-       <div className ={"Room-container-Wrapper" + (ActiveWindow==="ChatWindow"? " Hide" : "")}>
+       <div className ={"Room-container-Wrapper" + (ActiveWindow==="ChatWindow"? " Hide" : "")}
+       id="Room-Container-Wrapper"
+       >
         
         <div className="Room-container">
         
